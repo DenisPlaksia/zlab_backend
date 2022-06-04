@@ -11,7 +11,7 @@ module.exports = {
         return userService.UserService.updateUser(await parseData(req));
     },
     '/deleteUser': async function (req) {
-        return userService.UserService.deleteUser(await parseData(req).id);
+        return userService.UserService.deleteUser(await parseData(req));
     },
 };
 

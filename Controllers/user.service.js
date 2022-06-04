@@ -15,6 +15,7 @@ class UserService {
   updateUser(updateUser){
     const updateUserIndex = userArray.findIndex(user => user.id === updateUser.id);
     let user = userArray.find(u => u.id === updateUser.id);
+
     user.name = updateUser.name;
     user.email = updateUser.email;
     user.password = updateUser.password;
@@ -23,11 +24,15 @@ class UserService {
   }
 
   deleteUser(userId){
-    const userIndex = userArray.findIndex(user => user.id === userId);
+    const userIndex = userArray.findIndex(user => user.id === userId.id);
     userArray.splice(userIndex, 1);
   }
 }
 
-const userArray = [];
+const userArray = [
+  new User("John", "a", "b"),
+  new User("John2", "22a", "b2"),
+  new User("John3", "22a", "b2"),
+];
 
 module.exports.UserService = new UserService();
